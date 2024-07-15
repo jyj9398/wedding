@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>A과 B의 결혼식</title>
+    <meta content="A과 B의 결혼식에 와서 축하해주세요~!" name="description"/>
+    <meta property="og:image" content="images/pic2.jpeg">
+    <meta property="fb:app_id" content="781066922265598" />
+    <meta property="fb:admins" content="Choi.Anderson"/>
+    <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/calendar-theme1.css"/>
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/calendar.min.js"></script>
+    <script type="text/javascript" src="js/caleandar.js"></script>
+    <script type="text/javascript">
+        function sendMail() {
+
+            (function () {
+                emailjs.init("user_yjLL5xG0A3kkOCH5BGIDh");
+                emailjs.send("wedding-mail", "gift_send", {
+                    name: $("#sender-name").value,
+                    gift: $("#gift-name").text(),
+                    message: $("#sender-message").value
+                }).then(function (response) {
+                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                }, function (err) {
+                    console.log("FAILED. error=", err);
+                });
+            })();
+        }
+
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                  tmp = item.split("=");
+                  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+        const marriageDate = new Date(2025, 2, 15);
+
+        $(document).ready(function () {
+
+            // caleandar()
+            // cale
+            var events = [
+                {'Date': marriageDate, 'Title': '💚D-Day💚', 'Link': 'https://yujin-hong.github.io/'},
+            ];
+            let element = document.getElementById('calendar');
+            caleandar(element, events, {});
+            showDaysUntilDDay();
+            function getText(){
+                var result = null;
+                $.ajax( { url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
+                        type: 'get',
+                        dataType: 'html',
+                        async: false,
+                        success: function(data) { result = data; }
+                    }
+                );
+                FileReady = true;
+                return result;
+            }
+            var markdown_source = getText();
+            var comment_contents = markdown_source.split("축하의 말")[1];
+
+            var md = new Remarkable();
+            $("#comments").append(md.render(comment_contents));
+
+            
+            if(findGetParameter('gift')=='false'){
+                $('#gifts').hide();
+            }
+        });
+
+        function calculateDaysToMarriageDate() {
+            // Parse the dates
+            const firstDate = marriageDate;
+            const secondDate = new Date();
+
+            // Calculate the difference in milliseconds
+            const differenceInMilliseconds = Math.abs(secondDate - firstDate);
+
+            // Convert milliseconds to days
+            const millisecondsPerDay = 1000 * 60 * 60 * 24;
+            const differenceInDays = Math.ceil(differenceInMilliseconds / millisecondsPerDay);
+
+            return differenceInDays;
+        }
+
+        function showDaysUntilDDay() {
+            const daysUntilDDay = calculateDaysToMarriageDate();
+            document.getElementById("dday-result").innerText = `D-${daysUntilDDay}`;
+        }
+    </script>
+</head>
+
+<body id="top">
+<header></header>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
+<div class="page-content">
+    <div class="div">
+        <div class="ww-home-page" id="home">
+            <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
+                <div class="container ww-announcement-container">
+                    <p class="ww-couple-name ww-title" style="font-size:1.0em">The Wedding of</p>
+                    <div class="ww-title" style="display: ruby-text">
+                    <p class="ww-title" style="font-family: 'Noto Serif KR', serif; font-size:1.5em">이재윤 </p>
+                        <p style="font-family: 'Noto Serif KR', serif; font-size:1.0em">그리고</p>
+                    <p class="ww-title" style="font-family: 'Noto Serif KR', serif; font-size:1.5em">홍유진</p>
+                    </div>
+                    <p class="h2 mt-5"
+                       style="font-family: 'Noto Serif KR', serif; font-size:0.8em; letter-spacing:-1px">
+                        <b style="font-size:1.4em;">2025년 03월 18일 일요일 오후 1시</b>
+                        <br><br>
+                        <b style="font-size:1.4em;">호교회</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section bg-light" id="events">
+            <div class="container ww-wedding-event text-center">
+                <img alt="Groom" class="img-fluid" src="images/flower2.png" style="width:50px;"/>
+                <h2 class="h4 text-center pb-3 pt-5 ww-title" style="font-family: 'Noto Serif KR', serif;">초대합니다</h2>
+                <div class="col text-center mb-5">
+                    <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.8em; letter-spacing:-0.5px">
+                        봄꽃이 만개하고 따스한 햇살이 내려오는 아름다운 계절,<br>
+                        저희 두 사람의 사랑도 꽃을 피워 결실을 맺게 되었습니다. <br>
+                        화사한 꽃향기와 포근한 봄바람이 가득한 날, <br>
+                        저희의 사랑을 축복해 주시기를 부탁드립니다. <br> <br>
+
+                        사랑과 감사의 마음을 담아 <br>
+                        여러분을 저희 결혼식에 초대합니다. <br>
+                    </h6>
+                </div>
+                <div class="col text-center mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.2em; ">
+                    <p>누구 누구 <span style="font-size:0.8em;">차남</span> 이재윤</p>
+                    <p>누구 누구 <span style="font-size:0.8em;">차녀</span> 홍유진</p>
+                    <div> 연락하기 </div>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section" id="gallery">
+            <div class="ww-photo-gallery">
+                <div class="container">
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Great Vibes', cursive; font-size:1.4em">Gallery</h2>
+                    <div class="ww-gallery">
+                        <div class="card-columns">
+                            <div class="card" data-groups="[&quot;party&quot;,&quot;wedding&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 2" class="img-fluid" src="images/pic2.jpeg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 3" class="img-fluid" src="images/pic3.jpeg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;party&quot;,&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 4" class="img-fluid" src="images/pic4.jpeg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 5" class="img-fluid" src="images/pic6.jpeg"/>
+                                </a>
+                            </div>
+                            <div class="card"
+                                 data-groups="[&quot;wedding&quot;,&quot;ceremony&quot;,&quot;party&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 6" class="img-fluid" src="images/pic7.jpeg"/>
+                                </a>
+                            </div>
+                            <div class="card" data-groups="[&quot;vacation&quot;]">
+                                <a data-gallery="ww-gallery" data-toggle="lightbox">
+                                    <img alt="Gallery Pic 7" class="img-fluid" src="images/pic5.jpeg"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section bg-light" id="date">
+            <div class="container ww-wedding-event">
+                <h2 class="h1 text-center ww-title" style="font-family: 'Great Vibes', cursive; font-size:1.4em">Schedule</h2>
+                <div class="text-center" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px">
+                    2024.03.15 <br>
+                    일요일 오후 1:00
+                </div>
+                <hr>
+                <div class="col justify-content-lg-center pt-lg-3" style="display:flex; font-family: 'Roboto Condensed', sans-serif; font-size:1.0em;" id="calendar">
+                </div>
+                <hr>
+                <div class="col text-center mb-3">
+                    <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                        이재윤 <i class="fa fa-heart"></i> 홍유진의 예식일 <span style="color:red;" id="dday-result"></span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section" id="location">
+            <div class="ww-photo-gallery">
+                <div class="container">
+                    <h2 class="h1 text-center ww-title" style="font-family: 'Great Vibes', cursive; font-size:1.4em">Location</h2>
+                    <div class="col text-center mt-5 mb-5">
+                        <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.4em; letter-spacing:-1px">
+                            서울대학교 호암교수회관
+                        </h6>
+                        <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                            서울특별시 관악구 어쩌구 ...
+                        </h6>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="my-3">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.297439052569!2d129.1238775160104!3d35.1741384652207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892c2513ecf5d%3A0x7d362ece2091e2f8!2z7IS87YWA7IKs7J207Ja47Iqk7YyM7YGsIOy7qOuypOyFmO2ZgA!5e0!3m2!1sko!2skr!4v1554092125630!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="my-3 text-center">
+                                <a href="http://naver.me/5pTy3HCa">
+                                    <img alt="naver-map" class="map-icon" id="naver-map"
+                                         src="images/map/naver-map.png"/>
+                                </a>
+                                <a href="http://dmaps.kr/2bms8">
+                                    <img alt="kakao-map" class="map-icon" id="kakao-map"
+                                         src="images/map/kakao-map.png"/>
+                                </a>
+                                <a href="https://maps.app.goo.gl/jfDxw">
+                                    <img alt="google-map" class="map-icon" id="google-map"
+                                         src="images/map/google-map.png"/>
+                                </a>
+                            </div>
+                            <div class="col text-center">
+                                <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
+                                    셔틀버스 - 센텀시티역 4번출구앞에서 15분 간격으로 운행
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ww-section bg-light" id="account">
+            <div class="ww-photo-gallery">
+                <div class="container">
+            <h2 class="h1 text-center ww-title" style="font-family: 'Noto Serif KR', serif; font-size:1.4em">마음 전하는 곳</h2>
+            <div class="col text-center mb-5 mt-5">
+                <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.8em; letter-spacing:-0.5px">
+                    저희의 소중한 결혼식에 함께해 주시지 못하는 분들을 위해, <br>
+                    아래 계좌번호를 기입하였습니다.<br>
+                    새로운 시작을 응원해 주시는 마음을 감사히 받겠습니다. <br>
+                </h6>
+            </div>
+            <div class="col text-center">
+                <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                    <div id="toggle-groom-account-info" style="background-color: #b6b7b9; border-radius: 10px; padding: 5px;"> 신랑측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
+                    <div id="groom-account-info" style="display:none;">
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                    <div id="toggle-bride-account-info" style="background-color: #b6b7b9; border-radius: 10px; padding: 5px;"> 신부측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
+                    <div id="bride-account-info" style="display:none;">
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                        <div class="bg-light row mt-2 mb-2">
+                            <div class="col-9 text-left">
+                                우리 123412034314 <br> 홍유진
+                            </div>
+                            <div class="col-3 mt-2 text-right">
+                                <button class="btn btn-sm btn-primary">복사</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h1 text-center ww-title mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.4em">
+                <hr>
+                <p style="font-size:0.6em"> <i class="fa fa-comment" ></i> 카카오톡으로 공유하기 </p>
+                <p style="font-size:0.6em"> <i class="fa fa-link" ></i>  청첩장 링크 복사하기 </p>
+                <p class="mt-5" style="font-family: 'Great Vibes', cursive; font-size:0.9em"> Made By Yujin & Jaeyoon </p>
+            </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">보내는 분 성함</span>
+                    </div>
+                    <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
+                </div>
+                <div class="input-group">
+                    <textarea aria-label="With textarea" class="form-control" id="sender-message"
+                              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/ekko-lightbox.min.js"></script>
+<script src="scripts/main.js"></script>
+
+<div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
+</div>
+
+<div class="bottom_left">
+    <audio id="player" src="mus.mp3"></audio>
+    <div>
+        <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
+    </div>
+</div>
+
+</body>
+</html>
