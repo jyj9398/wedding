@@ -35,6 +35,9 @@ $(document).ready(function () {
         $("#gift-name").text($(this).data("name"));
     })
 
+    $("#contact-toggle").click(function () {
+        $("#call-popup").show();
+    })
 
     $("#reserveGiftButton").click(function () {
         let name = $("#sender-name").val();
@@ -59,6 +62,22 @@ $(document).ready(function () {
             alert("메시지 전송이 실패했습니다. 다시 시도해주세요.");
         });
     })
+
+    $('.call_box_btn').click(function() {
+        $('.call_black').show();
+        $('.call_pop_down').show();
+      });
+    
+      $('.call_black').click(function() {
+        $('.call_black').hide();
+        $('.call_pop_down').hide();
+      });
+    
+      $('.call_close').click(function() {
+        $('.call_black').hide();
+        $('.call_pop_down').hide();
+      });
+      
 })
 
 // Smooth scroll for links with hashes

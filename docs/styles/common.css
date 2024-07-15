@@ -1,0 +1,92 @@
+/* 신랑,신부,혼주 정보 및 연락하기  */
+
+/* .flower_deceased {display: none;} */
+.ch_deceased img {width: 20px; vertical-align: middle;}
+.mobile {vertical-align: middle; margin-left: 10px;}
+.mobile img {width: 12px;}
+.sms {vertical-align: middle; margin-left: 10px;}
+.sms img {width: 12px;}
+
+.call_box {line-height: 22px;}
+.call_box:first-of-type {margin-bottom: 20px;}
+.call_box .mini_txt {font-size: 0.75rem; text-align: center; width: 38px; display: inline-block;}
+.call_box font {font-size: 0.75rem; margin:0;}
+.call_box i {vertical-align: middle; margin-left: 8px; color: #b9b9b9;}
+.call_box .call_sec{display: inline-block;}
+.call_box_btn {margin: 20px 16% 0;}
+.call_box_btn p {padding: 13px 0; cursor: pointer;}
+
+.call_pop_down {text-align: left;display: none;background-color: #fff;position: absolute;z-index: 2;width: 100%;max-width: 300px;border-radius: 10px;/* padding: 0 20px; */}
+.call_pop_down > p {text-align: center;;padding: 15px;border-radius: 10px 10px 0 0;margin-bottom: 20px; position: relative; }
+.call_pop_down > p span {font-family: 'Pre-m' !important; color: #333;}
+.call_pop_down > p i {font-size: 1.125rem; cursor: pointer; position: absolute; right: 15px; top: 50%; transform: translateY(-50%);}
+.call_pop_down>div {/* padding-bottom: 20px; */padding: 0 20px 20px;}
+/* .call_pop_down>div {padding: 20px 0;} */
+/* .call_pop_down>div:nth-of-type(2) {border-top: 1px dotted #ddd;} */
+.call_pop_down>div .tit {margin-bottom: 15px; display: inline-block; width: 100%; color: #333; font-size: 0.75rem; font-family: 'Pre-B' !important;}
+.call_pop_down>div .pop_box {display: flex; margin-bottom: 15px;}
+.call_pop_down>div .pop_box:last-of-type {margin-bottom: 0;}
+.call_pop_down>div .pop_box font {font-size: 0.75rem;}
+.call_pop_down>div .pop_box p {width: 80%;}
+.call_pop_down>div .pop_box a {margin-left: 20px; width: 10%;}
+.call_pop_down>div .pop_box p span {font-family: 'Pre-L' !important;}
+
+.gr_call_dot {position: relative; margin: 0 6px 0 3px;}
+.gr_call_dot::after {content: ""; display: inline-block; width: 1px; height: 1px; background-color: #000; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.br_call_dot {position: relative; margin: 0 6px 0 3px;}
+.br_call_dot::after {content: ""; display: inline-block; width: 1px; height: 1px; background-color: #000; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+
+/*팝업 공통 */
+.black_back {position: fixed; background-color: rgba(0,0,0,0.5); top: 0; left: 0; bottom: 0; right: 0; z-index: 4; display: none;}
+.pop_front {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 12; background-color: #fff;}
+/* #invite_wrap .call_pop_down {position: absolute;} */
+.pop_front input {outline: 0; border: 0; background: #f6f6f6; width: 100%; height: 40px; border-radius: 4px; padding: 0 10px; font-family: 'Pre-L' !important; font-size: 14px; margin-bottom: 10px;}
+.del_black {z-index: 13;}
+
+.call_pop_down{ max-width: 380px;}
+.call_pop_down .pop_g_line{padding: 10px;  width: 85%;  margin: 0 auto;  margin-bottom: 20px;}
+.pop_b_line{padding: 10px;  border-top: 1px solid #ededed;  width: 85%;  margin: 0 auto;  margin-bottom: 20px;}
+
+.call_pop_down .g_parents .caa_tit{color: #83afe5;}
+.call_pop_down .b_parents .caa_tit{color: #f09499;}
+
+.call_pop_down .theme_1_back{padding: 20px 15px; margin-bottom: 0; background: #141c2f !important; color:#fff;}
+.call_pop_down .theme_1_back span{font-size: 17px; color:#fff; font-family: 'Pre-m' !important;}
+.call_pop_down .call_tit {width: 25%;text-align: left;color: #363636;font-size: 14px;}
+
+.call_box_btn p{border-radius: 5px;width: 100%;}
+
+/* .call_box .wd_or_name {margin-left: 10px;} */
+.call_box .wd_or_name font {font-size: 0.8rem;color: #999;margin-right: 8px;}
+.call_pop_down>div .pop_box {margin-top: 20px;margin-bottom: 0;/* justify-content: space-between; */}
+.call_pop_down>div .pop_box:last-child {margin-bottom: 0;}
+.call_pop_down .call_name {width: 50%;text-align: center;font-family: 'Pre-R';}
+/* .call_pop_down .call_name .sans_serif {position: relative;}
+.call_pop_down .call_name .em_ch {position: absolute;top: 50%;left: -25px;transform: translateY(-50%);} */
+.call_pop_down .call_icon {width: 25%;text-align: right;}
+
+.call_pop_down .pop_b_line .pop_box:first-child {}
+
+.offset .call_pop_down{ max-width: 380px;}
+.offset .call_pop_down .pop_g_line{padding: 10px;  width: 85%;  margin: 0 auto;  margin-bottom: 20px;}
+.call_pop_down .pop_b_line{padding: 10px;  border-top: 1px solid #ededed;  width: 85%;  margin: 0 auto;  margin-bottom: 20px;}
+
+.offset .call_pop_down .g_parents .caa_tit{color: #83afe5;}
+.offset .call_pop_down .b_parents .caa_tit{color: #f09499;}
+
+.offset .call_pop_down .theme_1_back{padding: 20px 15px; margin-bottom: 0;}
+.offset .call_pop_down .theme_1_back span{font-size: 17px;}
+.offset .call_pop_down .call_tit {width: 25%;text-align: left;color: #363636;font-size: 14px;}
+
+#pro_mode .call_wrap .call_inner .call_box_btn p{border-radius: 5px;width: 100%;}
+
+/* .call_box .wd_or_name {margin-left: 10px;} */
+.call_box .wd_or_name font {font-size: 0.8rem;color: #999;margin-right: 8px;}
+.call_pop_down>div .pop_box {margin-top: 20px;margin-bottom: 0;/* justify-content: space-between; */}
+.call_pop_down>div .pop_box:last-child {margin-bottom: 0;}
+.call_pop_down .call_name {width: 50%;text-align: center;font-family: 'Pre-R';}
+/* .call_pop_down .call_name .sans_serif {position: relative;}
+.call_pop_down .call_name .em_ch {position: absolute;top: 50%;left: -25px;transform: translateY(-50%);} */
+.call_pop_down .call_icon {width: 25%;text-align: right;}
+
