@@ -20,6 +20,14 @@ jobs:
       - run: pip install -r requirements.txt
         working-directory: ./hoam
 
+      - run: >
+          curl --location 'https://hoamwedding.com/wp-admin/admin-ajax.php' \
+                --header 'Content-Type: application/x-www-form-urlencoded' \
+          --header 'Cookie: PHPSESSID=if1at24tl85779f9t96rrgi4q2; mphb_session=1efb3511e4bc065eb2e4d33f9916b423%7C%7C1721226936%7C%7C1721226576' \
+            --data-urlencode 'action=booked_calendar_date' \
+            --data-urlencode 'date=2025-03-09' \
+            --data-urlencode 'calendar_id=0'
+
       - id: main
         run: python hoam.py >> "$GITHUB_OUTPUT"
         working-directory: ./hoam
