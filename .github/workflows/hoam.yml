@@ -21,7 +21,7 @@ jobs:
         working-directory: ./hoam
 
       - id: main
-        run: python hoam >> "$GITHUB_OUTPUT"
+        run: python hoam.py >> "$GITHUB_OUTPUT"
         working-directory: ./hoam
 
       - name: create an issue
