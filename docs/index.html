@@ -168,7 +168,7 @@
                 <div class="call_black black_back"></div>
                 <div class="call_pop_down pop_front" style="display: none;">
                     <p class="theme_1_back">
-                      <span style="color:return_color">연락하기</span>
+                      <span style="color:return_color">연락처</span>
                       <i class="xi-close-thin call_close"></i>
                     </p>
                 
@@ -182,44 +182,35 @@
                             <span data-name="groom_name" class="sans_serif">이재윤</span>
                           </div>
                           <div class="call_icon">
-                            <a class="gr_call gr_phone mobile" href="tel:01027977855">
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01027977855', '전화번호가 복사되었습니다.')">
                               <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_phone sms" href="sms:01027977855">
-                              <img src="icons/sms.svg" alt="">
                             </a>
                           </div>
                         </div>
                 
                         <div class="pop_box gr_p gr_p_phone">
                           <div class="call_tit">
-                              신랑 아버지
+                              아버지
                           </div>
                           <div class="call_name">
                             <span data-name="groom_p_name" class="sans_serif">이두희</span>
                           </div>
                           <div class="call_icon">
-                            <a class="gr_call gr_p_phone mobile" href="tel:01054469203">
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01054469203', '전화번호가 복사되었습니다.')">
                               <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_p_phone sms" href="sms:01054469203">
-                              <img src="icons/sms.svg" alt="">
                             </a>
                           </div>
                         </div>
                         <div class="pop_box gr_m gr_m_phone">
                           <div class="call_tit">
-                            신랑 어머니
+                            어머니
                           </div>
                           <div class="call_name">
                             <span data-name="groom_m_name" class="sans_serif">백임선</span>
                           </div>
                           <div class="call_icon">
-                            <a class="gr_call gr_m_phone mobile" href="tel:01086287689">
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01086287689', '전화번호가 복사되었습니다.')">
                               <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_m_phone sms" href="sms:01086287689">
-                              <img src="icons/sms.svg" alt="">
                             </a>
                           </div>
                         </div>
@@ -237,45 +228,36 @@
                           <span data-name="bride_name" class="sans_serif">홍유진</span>
                         </div>
                         <div class="call_icon">
-                          <a class="br_call br_phone mobile" href="tel:01097252508">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_phone sms" href="sms:01097252508">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01097252508', '전화번호가 복사되었습니다.')">
+                              <img src="icons/call.svg" alt="">
+                            </a>
                         </div>
                       </div>
                 
                       <div class="pop_box br_p br_p_phone">
                         <div class="call_tit">
-                          신부 아버지
+                          아버지
                         </div>
                         <div class="call_name">
                           <span data-name="bride_p_name" class="sans_serif">성함</span>
                         </div>
                         <div class="call_icon">
-                          <a class="br_call br_p_phone mobile" href="tel:01074357555">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_p_phone sms" href="sms:01074357555">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01097252508', '전화번호가 복사되었습니다.')">
+                              <img src="icons/call.svg" alt="">
+                            </a>
                         </div>
                       </div>
                       <div class="pop_box br_m br_m_phone">
                         <div class="call_tit">
-                          신부 어머니
+                          어머니
                         </div>
                         <div class="call_name">
                           <span data-name="bride_m_name" class="sans_serif">성함</span>
                         </div>
                         <div class="call_icon">
-                          <a class="br_call br_m_phone mobile" href="tel:01099157555">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_m_phone sms" href="sms:01099157555">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
+                            <a class="gr_call gr_phone mobile" onclick="copyToClipBoard('01097252508', '전화번호가 복사되었습니다.')">
+                              <img src="icons/call.svg" alt="">
+                            </a>
                         </div>
                       </div>
                     </div>
@@ -548,16 +530,20 @@
 
 </body>
 <script>
-    function copyToClipBoard(text) {
+    function copyToClipBoard(text, message) {
         navigator.clipboard.writeText(text);
-        alert("복사되었습니다");
+        if(message) {
+            alert(message);
+        } else {
+            alert("복사되었습니다");
+        }
     }
     Kakao.init('0884c106c959c0930a8d4387bb4dc95b');
     function kakaoShare() {
         Kakao.Link.sendDefault({
             objectType: 'feed',
             content: {
-            title: '이재윤&홍유진에 결혼에 초대합니다!',
+            title: '이재윤&홍유진의 결혼에 초대합니다!',
             imageUrl: 'https://github.com/jyj9398/jyj9398.github.io/blob/main/docs/images/home-img.jpg?raw=true',
             link: {
                 mobileWebUrl: 'https://jyj9398.github.io',

@@ -3,7 +3,7 @@
 /* .flower_deceased {display: none;} */
 .ch_deceased img {width: 20px; vertical-align: middle;}
 .mobile {vertical-align: middle; margin-left: 10px;}
-.mobile img {width: 12px;}
+.mobile img {width: 16px;}
 .sms {vertical-align: middle; margin-left: 10px;}
 .sms img {width: 12px;}
 
@@ -51,7 +51,7 @@
 .call_pop_down .g_parents .caa_tit{color: #83afe5;}
 .call_pop_down .b_parents .caa_tit{color: #f09499;}
 
-.call_pop_down .theme_1_back{padding: 20px 15px; margin-bottom: 0; background: #141c2f !important; color:#fff;}
+.call_pop_down .theme_1_back{padding: 20px 15px; margin-bottom: 0; background: #2c447d !important; color:#fff;}
 .call_pop_down .theme_1_back span{font-size: 17px; color:#fff; font-family: 'Pre-m' !important;}
 .call_pop_down .call_tit {width: 25%;text-align: left;color: #363636;font-size: 14px;}
 
