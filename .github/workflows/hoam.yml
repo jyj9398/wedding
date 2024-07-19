@@ -1,8 +1,8 @@
 name: cron
 
 on:
-#  schedule:
-#    - cron: "0 1,13 * * *"
+  #  schedule:
+  #    - cron: "0 1,13 * * *"
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,6 @@ jobs:
       - run: >
           curl --location 'https://hoamwedding.com/wp-admin/admin-ajax.php' \
                 --header 'Content-Type: application/x-www-form-urlencoded' \
-          --header 'Cookie: PHPSESSID=if1at24tl85779f9t96rrgi4q2; mphb_session=1efb3511e4bc065eb2e4d33f9916b423%7C%7C1721226936%7C%7C1721226576' \
             --data-urlencode 'action=booked_calendar_date' \
             --data-urlencode 'date=2025-03-09' \
             --data-urlencode 'calendar_id=0'
