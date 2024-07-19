@@ -50,10 +50,10 @@ for pair in dates_to_check:
       result[month] = [date]
 
 
+print("delim<<EOF")
 for month in months:
   if month not in result:
-    print(f"Month {month} has no available datesEOF")
+    print(f"Month {month} has no available dates")
   else:
-    print(f"Month {month} has available dates: {result[month]}EOF")
-print("end")
+    print(f"Month {month} has available dates: {result[month]}")
 print("EOF", end="")
