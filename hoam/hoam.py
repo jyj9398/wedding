@@ -24,6 +24,7 @@ for pair in dates_to_check:
   payload = 'action=booked_calendar_date&date={}&calendar_id=0'.format(date)
   headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
   }
 
   response = requests.request("POST", url, headers=headers, data=payload)
