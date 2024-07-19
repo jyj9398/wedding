@@ -28,6 +28,7 @@ for pair in dates_to_check:
   }
 
   response = requests.request("POST", url, headers=headers, data=payload)
+  console.log(response.text)
 
   soup = BeautifulSoup(response.text, 'html.parser')
 

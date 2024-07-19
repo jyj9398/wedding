@@ -23,6 +23,8 @@ jobs:
       - run: >
           curl --location 'https://hoamwedding.com/wp-admin/admin-ajax.php' \
                 --header 'Content-Type: application/x-www-form-urlencoded' \
+                --header 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36' \
+                --header 'Cookie: PHPSESSID=p70hlhjhmevb2np7d8rohvb1ii; mphb_session=9f69e45b79fb4a6451b30bbda71dd3d4%7C%7C1721357734%7C%7C1721357374' \
             --data-urlencode 'action=booked_calendar_date' \
             --data-urlencode 'date=2025-03-09' \
             --data-urlencode 'calendar_id=0'
