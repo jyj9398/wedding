@@ -4,6 +4,7 @@ import requests, json
 
 api_url = "https://api.esimsta.com/test/test"
 url = "https://hoamwedding.com/wp-admin/admin-ajax.php"
+months=['3','4','5']
 dates_to_check = [
   {"month": "3", "date":'2025-03-09'},
   {"month": "3", "date":'2025-03-16'},
@@ -34,7 +35,6 @@ for pair in dates_to_check:
   }
 
   response = requests.request("POST", api_url, headers=headers, data=payload)
-  print(json.loads(response.text)['data'][0])
 
   soup = BeautifulSoup(json.loads(response.text)['data'][0], 'html.parser')
 
@@ -49,4 +49,9 @@ for pair in dates_to_check:
     else:
       result[month] = [date]
 
-print(json.dumps(result, indent=4, sort_keys=True))
+
+for month in months:
+  if month not in result:
+    print(f"Month {month} has no available dates")
+  else:
+    print(f"Month {month} has available dates: {result[month]}")
