@@ -52,6 +52,8 @@ for pair in dates_to_check:
 
 for month in months:
   if month not in result:
-    print(f"Month {month} has no available dates")
+    print(f"Month {month} has no available datesEOF")
   else:
-    print(f"Month {month} has available dates: {result[month]}")
+    print(f"Month {month} has available dates: {result[month]}EOF")
+print("end")
+print("EOF", end="")
