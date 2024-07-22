@@ -98,11 +98,11 @@
         height: 30px;
         width: 30px;
         border-radius: 50px;
-        background: #666;
+        background: #FFBBE0;
         color: #fff;
       }
       .cld-number.eventday:hover{
-        background: #666;
+        background: #2FA33B;
         color: #fff;
         cursor: pointer;
       }
