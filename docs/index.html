@@ -143,7 +143,7 @@
                     <span data-name="groom_name" class="sans_serif">이재윤</span>
                   </div>
                   <div class="call_icon">
-                    <a class="gr_call gr_phone mobile" href="tel:01027977855">
+                    <a class="gr_call gr_phone mobile" onclick="saveContact('이재윤', '010-2797-78555')">
                       <img src="icons/call.svg" alt="">
                     </a>
                     <a class="gr_call gr_phone sms" href="sms:01027977855">
@@ -248,7 +248,7 @@
         <div class="container ww-wedding-event">
           <h2 class="h1 text-center ww-title" style="font-family: 'Noto Serif KR', serif; font-size:1.4em">일정</h2>
           <div class="text-center" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px">
-            2024.08.15 목요일 오후 1:00 <br> <span style="font-size:0.9em; ">충북 제천시 복합타운3길 3 1층 건강밥상 신월 <i class="fa-solid fa-copy"></i></span>
+            2024.08.15 목요일 오후 1:00 <br> <span style="font-size:0.9em; ">충북 제천시 복합타운3길 3 1층 건강밥상 신월 <i class="fa-solid fa-copy" onclick="copyToClipBoard('https://naver.me/xejaiNUr')"></i></span>
           </div>
           <hr>
           <div class="col justify-content-lg-center pt-lg-3" style="display:flex; font-family: 'Roboto Condensed', sans-serif; font-size:1.0em;" id="calendar">
@@ -396,7 +396,7 @@
             </div>
             <div class="timeline-container right">
               <div class="timeline-content">
-                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">202?.??.??</h5>
+                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">2022.11.10</h5>
                 <div style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px; font-size:0.8em">
                   첫 해외여행. 서로가 참 많이 다르다는 것을 깨닫고 갖은 충돌로 서로 다른 비행기표로 귀국할 뻔 했으나 가까스로 위기 모면. 다른 사람들보다 서로를 우선하는 관계가 되겠다고 다짐을 받은 후 (부들부들) 함께 귀국.
                   서로를 더 깊이 알게되는 계기가 되어 이후 방콕, 홍콩 등 코로나로 가지 못했던 다양한 해외여행을 다니며 관계가 깊어짐
@@ -405,7 +405,7 @@
             </div>
             <div class="timeline-container left">
               <div class="timeline-content">
-                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">202?.??.??</h5>
+                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">2024.06.01</h5>
                 <div style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px; font-size:0.8em">
                   집에 갈때마다 느끼는 아쉬움이 점점 커지며, 함께 살아도 되겠다는 강한 확신을 가지고 결혼 결심 후 웨딩박람회 방문.
                   귀가 얇은 재윤의 압박으로 원치 않는 지출을 잔뜩하고 돌아온 날. 유진의 만류는 귓등으로도 듣지 않고 스킵해버려 결국 모두 결제해버린 재윤.
@@ -415,7 +415,7 @@
             </div>
             <div class="timeline-container right">
               <div class="timeline-content">
-                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">202?.??.??</h5>
+                <h5 style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px">2024.06.30</h5>
                 <div style="font-family: 'Noto Serif KR', serif; letter-spacing:-0.5px; font-size:0.8em">
                   유진의 갖은 집착으로 울며겨자먹기로 재윤의 프로포즈 대성공. 눈물은 없었지만 영화속 한 장면처럼 눈물 없이 볼수 없던 멋진 프로포즈. 본격적인 결혼 준비 시작.
                 </div>
@@ -508,29 +508,23 @@
             alert("복사되었습니다");
         }
     }
-    Kakao.init('0884c106c959c0930a8d4387bb4dc95b');
-    function kakaoShare() {
-        Kakao.Link.sendDefault({
-            objectType: 'feed',
-            content: {
-            title: '이재윤&홍유진의 결혼에 초대합니다!',
-            imageUrl: 'https://github.com/jyj9398/jyj9398.github.io/blob/main/docs/images/home-img.jpg?raw=true',
-            link: {
-                mobileWebUrl: 'https://jyj9398.github.io',
-                webUrl: 'https://jyj9398.github.io',
-            },
-            },
-            buttons: [
-            {
-                title: '웹으로 보기',
-                link: {
-                    mobileWebUrl: 'https://jyj9398.github.io',
-                    webUrl: 'https://jyj9398.github.io',
-                },
-            },
-            ],
-            installTalk: true,
-        })
-    }
+
+    function saveContact(name, phone) {
+      var contact = {
+          name: name,
+          phone: phone,
+        };
+        // create a vcard file
+        var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEND:VCARD";
+        var blob = new Blob([vcard], { type: "text/vcard" });
+        var url = URL.createObjectURL(blob);
+        
+        const newLink = document.createElement('a');
+        newLink.download = contact.name + ".vcf";
+        newLink.textContent = contact.name;
+        newLink.href = url;
+        
+        newLink.click();
+      }
 </script>
 </html>
