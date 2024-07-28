@@ -294,7 +294,7 @@ function createCalendar(calendar, element, adjuster){
 }
 
 function caleandar(el, data, settings){
-  var marriageDate = new Date(2025, 2, 15);
+  var marriageDate = new Date(2024, 7, 15);
   var obj = new Calendar(data, settings, marriageDate);
   createCalendar(obj, el);
 }
