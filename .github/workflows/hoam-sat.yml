@@ -1,0 +1,32 @@
+name: cron-sat
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 2,10 * * *"
+
+jobs:
+  cron-sat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+        working-directory: ./hoam
+
+      - id: main
+        run: python hoam-sat.py >> "$GITHUB_OUTPUT"
+        working-directory: ./hoam
+
+      - name: create an issue
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Hoam Result(Sat)
+          body: ${{join(steps.main.outputs.*, '\n')}}
