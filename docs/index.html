@@ -143,7 +143,7 @@
                     <span data-name="groom_name" class="sans_serif">이재윤</span>
                   </div>
                   <div class="call_icon">
-                    <a class="gr_call gr_phone mobile" onclick="saveContact('이재윤', '010-2797-78555')">
+                    <a class="gr_call gr_phone mobile" onclick="saveContact('이재윤', '010-2797-7855')">
                       <img src="icons/call.svg" alt="">
                     </a>
                     <a class="gr_call gr_phone sms" href="sms:01027977855">
@@ -515,7 +515,7 @@
           phone: phone,
         };
         // create a vcard file
-        var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEND:VCARD";
+        var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:CHARSET=UTF-8:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEND:VCARD";
         var blob = new Blob([vcard], { type: "text/vcard; charset=utf-8" });
         var url = URL.createObjectURL(blob);
         
