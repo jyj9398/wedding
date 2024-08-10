@@ -53,15 +53,16 @@
 
 .call_pop_down .theme_1_back{padding: 20px 15px; margin-bottom: 0; background: #2c447d !important; color:#fff;}
 .call_pop_down .theme_1_back span{font-size: 17px; color:#fff; font-family: 'Noto Serif KR' !important;}
-.call_pop_down .call_tit {width: 25%;text-align: left;color: #363636;font-size: 14px; font-family: 'Noto Serif KR';}
+.call_pop_down .call_tit {width: 35%;text-align: left;color: #363636;font-size: 13px; font-family: 'Noto Serif KR';}
+.call_pop_down .call_phone {width: 50%; text-align: left;color: #363636;font-size: 13px; font-family: 'Noto Serif KR';}
 
 .call_box_btn p{border-radius: 5px;width: 100%;}
 
 /* .call_box .wd_or_name {margin-left: 10px;} */
 .call_box .wd_or_name font {font-size: 0.8rem;color: #999;margin-right: 8px;}
-.call_pop_down>div .pop_box {margin-top: 20px;margin-bottom: 0;/* justify-content: space-between; */}
+.call_pop_down>div .pop_box {margin-top: 20px;margin-top: auto;/* justify-content: space-between; */}
 .call_pop_down>div .pop_box:last-child {margin-bottom: 0;}
-.call_pop_down .call_name {width: 50%;text-align: center;font-family: 'Noto Serif KR';}
+.call_pop_down .call_name {width: 15%;text-align: center; font-size: 13px; font-family: 'Noto Serif KR';}
 /* .call_pop_down .call_name .sans_serif {position: relative;}
 .call_pop_down .call_name .em_ch {position: absolute;top: 50%;left: -25px;transform: translateY(-50%);} */
 .call_pop_down .call_icon {width: 25%;text-align: right;}
