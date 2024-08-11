@@ -521,6 +521,9 @@
         newLink.href = url;
         
         newLink.click();
+        if (/Android/i.test(navigator.userAgent)) {
+          window.location.href = `intent://#Intent;scheme=vcf;action=android.intent.action.VIEW;type=text/x-vcard;S.filename=${encodeURIComponent(vcard)};end`;
+        }
       }
 </script>
 </html>
