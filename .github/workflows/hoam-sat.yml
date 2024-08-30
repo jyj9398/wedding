@@ -3,7 +3,7 @@ name: cron-sat
 on:
   workflow_dispatch:
   schedule:
-    - cron: "00 2,10 * * *"
+    - cron: "00 2 * * *"
 
 jobs:
   cron-sat:
