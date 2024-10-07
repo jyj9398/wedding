@@ -2,8 +2,8 @@ name: cron-sat
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "00 2 * * *"
+  # schedule:
+  #   - cron: "00 2 * * *"
 
 jobs:
   cron-sat:
