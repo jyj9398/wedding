@@ -10060,3 +10060,91 @@ body {
     left: 0;
     margin: 0px 15px 15px 15px;
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개 */
+    gap: 10px; /* 이미지 간 간격 */
+    width: 100%;
+}
+
+/* 개별 이미지 */
+.gallery img {
+    width: 100%;
+    height: auto; /* 원본 비율 유지 */
+    object-fit: cover; /* 이미지가 셀을 꽉 채우도록 */
+    border-radius: 8px; /* 모서리 둥글게 (선택 사항) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+}
+
+/* 갤러리 이미지 스타일 */
+.gallery-item {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* 갤러리 이미지 클릭 시 확대 효과 */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* 모달 스타일 */
+.gallery-modal {
+    display: none; /* 기본적으로 모달은 숨겨져 있음 */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* 모달 이미지 */
+.gallery-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* 모달 캡션 텍스트 */
+#caption {
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* 닫기 버튼 */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 더보기 버튼 컨테이너 */
+.toggle-btn-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* 숨겨진 이미지를 기본적으로 숨김 */
+.gallery-hidden {
+    display: none;
+}
