@@ -10082,6 +10082,7 @@ body {
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
+    touch-action:none;
 }
 
 /* 갤러리 이미지 클릭 시 확대 효과 */
@@ -10107,7 +10108,6 @@ body {
 /* 모달 이미지 */
 .gallery-modal-content {
     margin: auto;
-    display: block;
     width: 80%;
     max-width: 700px;
 }
