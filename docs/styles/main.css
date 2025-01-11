@@ -10082,7 +10082,6 @@ body {
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    touch-action:none;
 }
 
 /* 갤러리 이미지 클릭 시 확대 효과 */
