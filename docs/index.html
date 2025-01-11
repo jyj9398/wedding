@@ -55,7 +55,9 @@
         const marriageDate = new Date(2025, 2, 29);
 
         $(document).ready(function () {
-
+          document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();  // 우클릭 기본 동작을 막음
+          });
 
 
           // 토글 버튼과 갤러리 항목 가져오기
