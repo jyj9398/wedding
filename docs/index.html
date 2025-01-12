@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-<!--    <meta content="width=device-width, initial-scale=1" name="viewport">-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>재윤과 유진의 결혼식</title>
-    <meta content="재윤과 유진의 결혼식에 와서 축하해주세요~!" name="description"/>
-    <meta property="og:image" content="images/pic2.jpeg">
-    <meta property="fb:app_id" content="781066922265598" />
-    <meta property="fb:admins" content="Choi.Anderson"/>
-    <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-    <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-    <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-    <link href="css/ekko-lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/calendar-theme1.css"/>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <!--    <meta content="width=device-width, initial-scale=1" name="viewport">-->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>재윤과 유진의 결혼식</title>
+  <meta content="재윤과 유진의 결혼식에 와서 축하해주세요~!" name="description" />
+  <meta property="og:image" content="images/weeding-pictures/001.jpeg">
+  <meta property="fb:app_id" content="781066922265598" />
+  <meta property="fb:admins" content="Choi.Anderson" />
+  <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link href="css/ekko-lightbox.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/calendar-theme1.css" />
 
-    <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/fontello.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="styles/common.css" type="text/css" media="screen">
+  <link href="styles/main.css" rel="stylesheet">
+  <link href="styles/icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/fontello.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="styles/common.css" type="text/css" media="screen">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
-          rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
+    rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -34,152 +37,156 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type="text/javascript" src="js/calendar.min.js"></script>
-    <script type="text/javascript" src="js/caleandar.js"></script>
-    <script type="text/javascript">
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                  tmp = item.split("=");
-                  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
-        }
-        const marriageDate = new Date(2025, 2, 29);
-
-        $(document).ready(function () {
-          document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();  // 우클릭 기본 동작을 막음
-          });
-
-
-          // 토글 버튼과 갤러리 항목 가져오기
-          const toggleButton = document.getElementById("toggleGallery");
-          const hiddenImages = document.querySelectorAll(".gallery-item.gallery-hidden");
-          let isExpanded = false;
-
-          // 버튼 클릭 이벤트 추가
-          toggleButton.addEventListener("click", (event) => {
-            if (isExpanded) {
-              // 숨기기: 추가 이미지를 숨기고 버튼 텍스트 변경
-              hiddenImages.forEach(image => {
-                image.style.display = "none";
-              });
-              toggleButton.textContent = "▼ 더보기";
-              location.href = "#anchor";
-
-            } else {
-              // 보여주기: 추가 이미지를 표시하고 버튼 텍스트 변경
-              hiddenImages.forEach(image => {
-                image.style.display = "block";
-              });
-              toggleButton.textContent = "▴ 줄이기";
-              event.preventDefault();
-
-            }
-            isExpanded = !isExpanded; // 상태 반전
-          });
-
-          // 이미지 클릭 시 모달 띄우기
-          var modal = document.getElementById("imageModal");
-          var modalImg = document.getElementById("modalImage");
-          var images = document.getElementsByClassName("gallery-item");
-
-          // 각 이미지를 클릭할 때마다 해당 이미지를 큰 모달로 표시
-          for (var i = 0; i < images.length; i++) {
-            console.log('hi');
-            images[i].onclick = function() {
-              modal.style.display = "flex";
-              modalImg.src = this.src;
-            };
-          }
-
-          // 모달 닫기 기능
-          var span = document.getElementsByClassName("close")[0];
-          span.onclick = function() {
-            modal.style.display = "none";
-          };
-
-          $("#myCarousel").on("touchstart", function(event) {
-            var xClick = event.originalEvent.touches[0].pageX;
-            $(this).one("touchmove", function(event) {
-              var xMove = event.originalEvent.touches[0].pageX;
-              if (Math.floor(xClick - xMove) > 1) {
-                $(this).carousel('next');
-              }
-              else if (Math.floor(xClick - xMove) < -1) {
-                $(this).carousel('prev');
-              }
-            });
-            $(this).on("touchend", function() {
-              $(this).off("touchmove");
-            });
-          });
-          var events = [
-                {'Date': marriageDate, 'Title': '💚D-Day💚', 'Link': 'https://yujin-hong.github.io/'},
-            ];
-            let element = document.getElementById('calendar');
-            caleandar(element, events, {});
-            showDaysUntilDDay();
-            function getText(){
-                var result = null;
-                $.ajax( { url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
-                        type: 'get',
-                        dataType: 'html',
-                        async: false,
-                        success: function(data) { result = data; }
-                    }
-                );
-                FileReady = true;
-                return result;
-            }
-            var markdown_source = getText();
-            var comment_contents = markdown_source.split("축하의 말")[1];
-
-            var md = new Remarkable();
-            $("#comments").append(md.render(comment_contents));
-
-
-            if(findGetParameter('gift')=='false'){
-                $('#gifts').hide();
-            }
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <!-- <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
+    integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nka"
+    crossorigin="anonymous"></script> -->
+  <script type="text/javascript" src="js/calendar.min.js"></script>
+  <script type="text/javascript" src="js/caleandar.js"></script>
+  <script type="text/javascript" src="js/call-webapp.js"></script>
+  <script type="text/javascript">
+    function findGetParameter(parameterName) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
         });
+      return result;
+    }
+    const marriageDate = new Date(2025, 2, 29);
 
-        function calculateDaysToMarriageDate() {
-            // Parse the dates
-            const firstDate = marriageDate;
-            const secondDate = new Date();
+    $(document).ready(function () {
+      document.addEventListener('contextmenu', function (e) {
+        // e.preventDefault();  // 우클릭 기본 동작을 막음
+      });
 
-            // Calculate the difference in milliseconds
-            const differenceInMilliseconds = Math.abs(secondDate - firstDate);
 
-            // Convert milliseconds to days
-            const millisecondsPerDay = 1000 * 60 * 60 * 24;
-            const differenceInDays = Math.ceil(differenceInMilliseconds / millisecondsPerDay);
+      // 토글 버튼과 갤러리 항목 가져오기
+      const toggleButton = document.getElementById("toggleGallery");
+      const hiddenImages = document.querySelectorAll(".gallery-item.gallery-hidden");
+      let isExpanded = false;
 
-            return differenceInDays;
+      // 버튼 클릭 이벤트 추가
+      toggleButton.addEventListener("click", (event) => {
+        if (isExpanded) {
+          // 숨기기: 추가 이미지를 숨기고 버튼 텍스트 변경
+          hiddenImages.forEach(image => {
+            image.style.display = "none";
+          });
+          toggleButton.textContent = "▼ 더보기";
+          location.href = "#anchor";
+
+        } else {
+          // 보여주기: 추가 이미지를 표시하고 버튼 텍스트 변경
+          hiddenImages.forEach(image => {
+            image.style.display = "block";
+          });
+          toggleButton.textContent = "▴ 줄이기";
+          event.preventDefault();
+
         }
+        isExpanded = !isExpanded; // 상태 반전
+      });
 
-        function showDaysUntilDDay() {
-            let daysUntilDDay = calculateDaysToMarriageDate();
-            if(daysUntilDDay >= 0) {
-              document.getElementById("dday-result").innerText = `${daysUntilDDay}일 `;
-              document.getElementById("dday-result-statement").innerText = `남았습니다.`;
-            } else {
-              daysUntilDDay = daysUntilDDay * -1;
-              document.getElementById("dday-result").innerText = `${daysUntilDDay}일 `;
-              document.getElementById("dday-result-statement").innerText = `지났습니다.`;
-            }
+      // 이미지 클릭 시 모달 띄우기
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      var images = document.getElementsByClassName("gallery-item");
+
+      // 각 이미지를 클릭할 때마다 해당 이미지를 큰 모달로 표시
+      for (var i = 0; i < images.length; i++) {
+        images[i].onclick = function () {
+          modal.style.display = "flex";
+          modalImg.src = this.src;
+        };
+      }
+
+      // 모달 닫기 기능
+      var span = document.getElementsByClassName("close")[0];
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      $("#myCarousel").on("touchstart", function (event) {
+        var xClick = event.originalEvent.touches[0].pageX;
+        $(this).one("touchmove", function (event) {
+          var xMove = event.originalEvent.touches[0].pageX;
+          if (Math.floor(xClick - xMove) > 1) {
+            $(this).carousel('next');
+          }
+          else if (Math.floor(xClick - xMove) < -1) {
+            $(this).carousel('prev');
+          }
+        });
+        $(this).on("touchend", function () {
+          $(this).off("touchmove");
+        });
+      });
+      var events = [
+        { 'Date': marriageDate, 'Title': '💚D-Day💚', 'Link': 'https://yujin-hong.github.io/' },
+      ];
+      let element = document.getElementById('calendar');
+      caleandar(element, events, {});
+      showDaysUntilDDay();
+      function getText() {
+        var result = null;
+        $.ajax({
+          url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
+          type: 'get',
+          dataType: 'html',
+          async: false,
+          success: function (data) { result = data; }
         }
+        );
+        FileReady = true;
+        return result;
+      }
+      var markdown_source = getText();
+      var comment_contents = markdown_source.split("축하의 말")[1];
 
-    </script>
+      var md = new Remarkable();
+      $("#comments").append(md.render(comment_contents));
+
+
+      if (findGetParameter('gift') == 'false') {
+        $('#gifts').hide();
+      }
+    });
+
+    function calculateDaysToMarriageDate() {
+      // Parse the dates
+      const firstDate = marriageDate;
+      const secondDate = new Date();
+
+      // Calculate the difference in milliseconds
+      const differenceInMilliseconds = Math.abs(secondDate - firstDate);
+
+      // Convert milliseconds to days
+      const millisecondsPerDay = 1000 * 60 * 60 * 24;
+      const differenceInDays = Math.ceil(differenceInMilliseconds / millisecondsPerDay);
+
+      return differenceInDays;
+    }
+
+    function showDaysUntilDDay() {
+      let daysUntilDDay = calculateDaysToMarriageDate();
+      if (daysUntilDDay >= 0) {
+        document.getElementById("dday-result").innerText = `${daysUntilDDay}일 `;
+        document.getElementById("dday-result-statement").innerText = `남았습니다.`;
+      } else {
+        daysUntilDDay = daysUntilDDay * -1;
+        document.getElementById("dday-result").innerText = `${daysUntilDDay}일 `;
+        document.getElementById("dday-result-statement").innerText = `지났습니다.`;
+      }
+    }
+
+  </script>
 
   <style>
     body {
@@ -193,23 +200,28 @@
 </head>
 
 <body id="top">
-<header></header>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
-<div class="page-content">
+  <header></header>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
+  <div class="page-content">
     <div class="div">
       <div class="ww-section bg-light pt-5" id="home">
-        <h3 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; letter-spacing:0.1em;">2025/3/29</h3>
-        <h6 class="text-center ww-title pb-3" style="font-family: 'Noto Serif KR', serif; letter-spacing:0.1em; line-height: 1.8em;">
+        <h3 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; letter-spacing:0.1em;">2025/3/29
+        </h3>
+        <h6 class="text-center ww-title pb-3"
+          style="font-family: 'Noto Serif KR', serif; letter-spacing:0.1em; line-height: 1.8em;">
           SATURDAY
         </h6>
-        <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/022.jpeg"/>
+        <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/022.jpeg" />
 
         <div class="container ww-wedding-event text-center">
 
           <div class="text-center pb-3 pt-5">
-            <h5 class="text-center ww-title pb-3" style="font-family: 'Noto Serif KR', serif; letter-spacing:0;"> 이재윤 &nbsp; • &nbsp; 홍유진 </h5>
-            <h6 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; letter-spacing:0; line-height: 1.8em;">
+            <h5 class="text-center ww-title pb-3" style="font-family: 'Noto Serif KR', serif; letter-spacing:0;"> 이재윤
+              &nbsp; • &nbsp; 홍유진 </h5>
+            <h6 class="text-center ww-title"
+              style="font-family: 'Noto Serif KR', serif; letter-spacing:0; line-height: 1.8em;">
               2025년 3월 29일 토요일 오후 12시 <br>
               더 베네치아 잠실
             </h6>
@@ -217,614 +229,731 @@
         </div>
       </div>
 
-        <div class="ww-section bg-light" id="events">
-            <div class="container ww-wedding-event text-center">
-                <img alt="Groom" class="img-fluid" src="images/flower2.png" style="width:50px;"/>
-              <br>
-              <div class="text-center pb-3 pt-5">
-                <h6 class="text-center ww-title" style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> INVITATION </h6>
-                <h5 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 소중한 분들을 초대합니다 </h5>
+      <div class="ww-section bg-light" id="events">
+        <div class="container ww-wedding-event text-center">
+          <img alt="Groom" class="img-fluid" src="images/flower2.png" style="width:50px;" />
+          <br>
+          <div class="text-center pb-3 pt-5">
+            <h6 class="text-center ww-title"
+              style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;">
+              INVITATION </h6>
+            <h5 class="text-center ww-title"
+              style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 소중한 분들을 초대합니다 </h5>
+          </div>
+          <div class="col text-center pt-5 mb-5">
+            <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px; line-height:1.8;">
+              봄꽃이 만개하고 <br>
+              따스한 햇살이 내려오는 아름다운 계절,<br>
+              저희 두 사람의 사랑도 꽃을 피워<br>
+              결실을 맺게 되었습니다. <br>
+              화사한 꽃향기와 포근한 봄바람이 가득한 날, <br>
+              저희의 사랑을 축복해 주시기를 부탁드립니다. <br> <br>
+
+              사랑과 감사의 마음을 담아 <br>
+              여러분을 저희 결혼식에 초대합니다. <br>
+            </h6>
+          </div>
+          <img alt="Gallery Pic 9" class="w-100 pr-2 pl-2" style="border-radius: 1.5em;"
+            src="images/wedding-pictures/025.jpeg" />
+          <div class="col text-center mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.2em; ">
+            <p>이두희 · 백임선의 <span style="font-size:0.8em;">아들</span> 이재윤</p>
+            <p>홍준락 · 우필하의 <span style="font-size:0.8em;">딸</span> 홍유진</p>
+            <div class="call_box_btn call_p_btn"
+              style="background-color: #f79e9e; border-radius: 10px; padding: 5px; cursor: pointer;"> 연락하기</div>
+          </div>
+          <div class="call_black black_back"></div>
+          <div class="call_pop_down pop_front" style="display: none;">
+            <p class="theme_1_back">
+              <span style="color:return_color; font-family: 'Noto Serif KR'">연락처</span>
+              <i class="xi-close-thin call_close"></i>
+            </p>
+
+            <div class="g_parents pop_g_line">
+
+              <div class="pop_box gr_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신랑
+                </div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="groom_name" class="sans_serif">이재윤</span>
+                </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="gr_call gr_phone mobile" href="tel:01027977855">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="gr_call gr_phone sms" href="sms:01027977855">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
               </div>
-                <div class="col text-center pt-5 mb-5">
-                    <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px; line-height:1.8;">
-                        봄꽃이 만개하고 <br>
-                        따스한 햇살이 내려오는 아름다운 계절,<br>
-                        저희 두 사람의 사랑도 꽃을 피워<br>
-                        결실을 맺게 되었습니다. <br>
-                        화사한 꽃향기와 포근한 봄바람이 가득한 날, <br>
-                        저희의 사랑을 축복해 주시기를 부탁드립니다. <br> <br>
 
-                        사랑과 감사의 마음을 담아 <br>
-                        여러분을 저희 결혼식에 초대합니다. <br>
-                    </h6>
+              <div class="pop_box gr_p gr_p_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신랑 아버지
                 </div>
-              <img alt="Gallery Pic 9" class="w-100 pr-2 pl-2" style="border-radius: 1.5em;" src="images/wedding-pictures/025.jpeg"/>
-                <div class="col text-center mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.2em; ">
-                    <p>이두희 · 백임선의 <span style="font-size:0.8em;">아들</span> 이재윤</p>
-                    <p>홍준락 · 우필하의 <span style="font-size:0.8em;">딸</span> 홍유진</p>
-                  <div class="call_box_btn call_p_btn" style="background-color: #b6b7b9; border-radius: 10px; padding: 5px; cursor: pointer;"> 연락하기</div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="groom_p_name" class="sans_serif">이두희</span>
                 </div>
-                <div class="call_black black_back"></div>
-                <div class="call_pop_down pop_front" style="display: none;">
-                    <p class="theme_1_back">
-                      <span style="color:return_color; font-family: 'Noto Serif KR'">연락처</span>
-                      <i class="xi-close-thin call_close"></i>
-                    </p>
-
-                          <div class="g_parents pop_g_line">
-
-                        <div class="pop_box gr_phone">
-                          <div class="call_tit" style="font-size: 1.0em;">
-                            신랑
-                          </div>
-                          <div class="call_name" style="font-size: 1.0em;">
-                            <span data-name="groom_name" class="sans_serif">이재윤</span>
-                          </div>
-                          <div class="call_icon" style="font-size: 0.8em;">
-                            <a class="gr_call gr_phone mobile" href="tel:01027977855">
-                              <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_phone sms" href="sms:01027977855">
-                              <img src="icons/sms.svg" alt="">
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="pop_box gr_p gr_p_phone">
-                          <div class="call_tit" style="font-size: 1.0em;">
-                              신랑 아버지
-                          </div>
-                          <div class="call_name" style="font-size: 1.0em;">
-                            <span data-name="groom_p_name" class="sans_serif">이두희</span>
-                          </div>
-                          <div class="call_icon" style="font-size: 0.8em;">
-                            <a class="gr_call gr_p_phone mobile" href="tel:01054469203">
-                              <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_p_phone sms" href="sms:01054469203">
-                              <img src="icons/sms.svg" alt="">
-                            </a>
-                          </div>
-                        </div>
-                        <div class="pop_box gr_m gr_m_phone">
-                          <div class="call_tit" style="font-size: 1.0em;">
-                            신랑 어머니
-                          </div>
-                          <div class="call_name" style="font-size: 1.0em;">
-                            <span data-name="groom_m_name" class="sans_serif">백임선</span>
-                          </div>
-                          <div class="call_icon" style="font-size: 0.8em;">
-                            <a class="gr_call gr_m_phone mobile" href="tel:01086287689">
-                              <img src="icons/call.svg" alt="">
-                            </a>
-                            <a class="gr_call gr_m_phone sms" href="sms:01086287689">
-                              <img src="icons/sms.svg" alt="">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-
-                    <div class="b_parents pop_b_line">
-                      <!-- <span class="tit sans_serif">신부측 혼주</span> -->
-
-                      <div class="pop_box br_phone">
-                        <div class="call_tit" style="font-size: 1.0em;">
-                          신부
-                        </div>
-                        <div class="call_name" style="font-size: 1.0em;">
-                          <span data-name="bride_name" class="sans_serif">홍유진</span>
-                        </div>
-                        <div class="call_icon" style="font-size: 0.8em;">
-                          <a class="br_call br_phone mobile" href="tel:01097252508">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_phone sms" href="sms:01097252508">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="pop_box br_p br_p_phone">
-                        <div class="call_tit" style="font-size: 1.0em;">
-                          신부 아버지
-                        </div>
-                        <div class="call_name" style="font-size: 1.0em;">
-                          <span data-name="bride_p_name" class="sans_serif">홍준락</span>
-                        </div>
-                        <div class="call_icon" style="font-size: 0.8em;">
-                          <a class="br_call br_p_phone mobile" href="tel:01024712508">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_p_phone sms" href="sms:01024712508">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="pop_box br_m br_m_phone">
-                        <div class="call_tit" style="font-size: 1.0em;">
-                          신부 어머니
-                        </div>
-                        <div class="call_name" style="font-size: 1.0em;">
-                          <span data-name="bride_m_name" class="sans_serif">우필하</span>
-                        </div>
-                        <div class="call_icon" style="font-size: 0.8em;">
-                          <a class="br_call br_m_phone mobile" href="tel:01067591011">
-                            <img src="icons/call.svg" alt="">
-                          </a>
-                          <a class="br_call br_m_phone sms" href="sms:01067591011">
-                            <img src="icons/sms.svg" alt="">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="gr_call gr_p_phone mobile" href="tel:01054469203">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="gr_call gr_p_phone sms" href="sms:01054469203">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="pop_box gr_m gr_m_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신랑 어머니
+                </div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="groom_m_name" class="sans_serif">백임선</span>
+                </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="gr_call gr_m_phone mobile" href="tel:01086287689">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="gr_call gr_m_phone sms" href="sms:01086287689">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
+              </div>
             </div>
-        </div>
-        <a id="anchor"></a>
-        <div class="ww-section bg-light" id="gallery">
-            <div class="ww-photo-gallery">
-                <div class="container">
-                  <h6 class="text-center ww-title" style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> GALLERY </h6>
-                  <h5 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 우리의 순간들 </h5>
-                  <br>
-                  <div class="gallery">
-                    <img alt="Gallery Pic 1" class="w-100 gallery-item" src="images/wedding-pictures/001.jpeg"/>
-                    <img alt="Gallery Pic 35" class="w-100 gallery-item" src="images/wedding-pictures/035.jpeg"/>
-                    <img alt="Gallery Pic 26" class="w-100 gallery-item" src="images/wedding-pictures/026.jpeg"/>
-                    <img alt="Gallery Pic 36" class="w-100 gallery-item" src="images/wedding-pictures/036.jpeg"/>
-                    <img alt="Gallery Pic 37" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/037.jpeg"/>
-                    <img alt="Gallery Pic 24" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/024.jpeg"/>
-                    <img alt="Gallery Pic 27" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/027.jpeg"/>
-                    <img alt="Gallery Pic 4" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/004.jpeg"/>
-                    <img alt="Gallery Pic 6" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/006.jpeg"/>
-                    <img alt="Gallery Pic 18" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/018.jpeg"/>
-                    <img alt="Gallery Pic 2" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/002.jpeg"/>
-                    <img alt="Gallery Pic 19" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/019.jpeg"/>
-                    <img alt="Gallery Pic 3" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/003.jpeg"/>
-                    <img alt="Gallery Pic 20" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/020.jpeg"/>
-                    <img alt="Gallery Pic 8" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/008.jpeg"/>
-                    <img alt="Gallery Pic 9" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/009.jpeg"/>
-                    <img alt="Gallery Pic 28" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/028.jpeg"/>
-                    <img alt="Gallery Pic 29" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/029.jpeg"/>
-                    <img alt="Gallery Pic 30" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/030.jpeg"/>
-                    <img alt="Gallery Pic 10" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/010.jpeg"/>
-                    <img alt="Gallery Pic 32" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/032.jpeg"/>
-                    <img alt="Gallery Pic 33" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/033.jpeg"/>
-                    <img alt="Gallery Pic 34" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/034.jpeg"/>
-                    <img alt="Gallery Pic 31" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/031.jpeg"/>
-                    <img alt="Gallery Pic 11" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/011.jpeg"/>
-                    <img alt="Gallery Pic 13" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/013.jpeg"/>
-                    <img alt="Gallery Pic 12" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/012.jpeg"/>
-                    <img alt="Gallery Pic 21" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/021.jpeg"/>
-                    <img alt="Gallery Pic 16" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/016.jpeg"/>
-                    <img alt="Gallery Pic 17" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/017.jpeg"/>
-                    <img alt="Gallery Pic 23" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/023.jpeg"/>
-                    <img alt="Gallery Pic 15" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/015.jpeg"/>
-                    <img alt="Gallery Pic 7" class="w-100 gallery-item gallery-hidden" src="images/wedding-pictures/007.jpeg"/>
-                  </div>
-                  <div class="toggle-btn-container">
-                    <div id="toggleGallery" class="btn-light" style="border-radius: 10px; padding: 5px; cursor: pointer; font-size: 1.0em; font-family: 'Noto Serif KR', serif; letter-spacing:0.1em;">▼ 더보기</div>
-                  </div>
 
-                  <!-- 모달 (이미지를 크게 보여주는 영역) -->
-                  <div id="imageModal" class="gallery-modal">
-                    <span class="close">&times;</span>
-                    <img class="gallery-modal-content" id="modalImage">
-                  </div>
 
-<!--                  <div id="myCarousel" class="carousel slide" data-interval="false">-->
-<!--                    &lt;!&ndash; Indicators &ndash;&gt;-->
-<!--                    <ol class="carousel-indicators">-->
-<!--                      <li data-target="#myCarousel" data-slide-to="26" class="active"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="27"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="28"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="29"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="30"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="31"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="32"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="33"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="34"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="6"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="7"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="8"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="9"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="10"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="11"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="12"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="13"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="14"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="15"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="16"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="17"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="18"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="19"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="20"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="21"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="23"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="24"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="35"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="36"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="1"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="2"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="3"></li>-->
-<!--                      <li data-target="#myCarousel" data-slide-to="4"></li>-->
+            <div class="b_parents pop_b_line">
+              <!-- <span class="tit sans_serif">신부측 혼주</span> -->
 
-<!--                    </ol>-->
-
-<!--                    &lt;!&ndash; Wrapper for slides &ndash;&gt;-->
-<!--                    <div class="carousel-inner">-->
-<!--                      <div class="carousel-item active">-->
-<!--                        <img alt="Gallery Pic 26" class="w-100" src="images/wedding-pictures/026.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 27" class="w-100" src="images/wedding-pictures/027.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 28" class="w-100" src="images/wedding-pictures/028.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 29" class="w-100" src="images/wedding-pictures/029.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 30" class="w-100" src="images/wedding-pictures/030.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 31" class="w-100" src="images/wedding-pictures/031.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 32" class="w-100" src="images/wedding-pictures/032.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 33" class="w-100" src="images/wedding-pictures/033.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 34" class="w-100" src="images/wedding-pictures/034.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 6" class="w-100" src="images/wedding-pictures/006.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 7" class="w-100" src="images/wedding-pictures/007.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 8" class="w-100" src="images/wedding-pictures/008.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/009.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 10" class="w-100" src="images/wedding-pictures/010.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 11" class="w-100" src="images/wedding-pictures/011.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 12" class="w-100" src="images/wedding-pictures/012.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 13" class="w-100" src="images/wedding-pictures/013.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 14" class="w-100" src="images/wedding-pictures/014.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 15" class="w-100" src="images/wedding-pictures/015.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 16" class="w-100" src="images/wedding-pictures/016.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 17" class="w-100" src="images/wedding-pictures/017.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 18" class="w-100" src="images/wedding-pictures/018.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 19" class="w-100" src="images/wedding-pictures/019.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 20" class="w-100" src="images/wedding-pictures/020.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 21" class="w-100" src="images/wedding-pictures/021.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 23" class="w-100" src="images/wedding-pictures/023.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 24" class="w-100" src="images/wedding-pictures/024.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 35" class="w-100" src="images/wedding-pictures/035.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 36" class="w-100" src="images/wedding-pictures/036.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 1" class="w-100" src="images/wedding-pictures/001.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 2" class="w-100" src="images/wedding-pictures/002.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 3" class="w-100" src="images/wedding-pictures/003.jpeg"/>-->
-<!--                      </div>-->
-<!--                      <div class="carousel-item">-->
-<!--                        <img alt="Gallery Pic 4" class="w-100" src="images/wedding-pictures/004.jpeg"/>-->
-<!--                      </div>-->
-<!--                    </div>-->
-
-<!--                    &lt;!&ndash; Controls &ndash;&gt;-->
-<!--                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
-<!--                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                      <span class="sr-only">Previous</span>-->
-<!--                    </a>-->
-<!--                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
-<!--                      <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                      <span class="sr-only">Next</span>-->
-<!--                    </a>-->
-<!--                  </div>-->
-
+              <div class="pop_box br_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신부
                 </div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="bride_name" class="sans_serif">홍유진</span>
+                </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="br_call br_phone mobile" href="tel:01097252508">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="br_call br_phone sms" href="sms:01097252508">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="pop_box br_p br_p_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신부 아버지
+                </div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="bride_p_name" class="sans_serif">홍준락</span>
+                </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="br_call br_p_phone mobile" href="tel:01024712508">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="br_call br_p_phone sms" href="sms:01024712508">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="pop_box br_m br_m_phone">
+                <div class="call_tit" style="font-size: 1.0em;">
+                  신부 어머니
+                </div>
+                <div class="call_name" style="font-size: 1.0em;">
+                  <span data-name="bride_m_name" class="sans_serif">우필하</span>
+                </div>
+                <div class="call_icon" style="font-size: 0.8em;">
+                  <a class="br_call br_m_phone mobile" href="tel:01067591011">
+                    <img src="icons/call.svg" alt="">
+                  </a>
+                  <a class="br_call br_m_phone sms" href="sms:01067591011">
+                    <img src="icons/sms.svg" alt="">
+                  </a>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="ww-section bg-light" id="date">
-            <div class="container ww-wedding-event">
 
-              <h6 class="text-center ww-title" style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> SCHEDULE </h6>
-              <h5 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 사랑을 약속하는 시간</h5>
-                <div class="pt-5 text-center" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px">
-                  <span style="font-size: 25px;">2025.03.29 </span> <br>
-                    토요일 오후 12:00
-                </div>
-                <hr>
-                <div class="col justify-content-center pt-lg-3" style="display:flex; font-family: 'Roboto Condensed', sans-serif; font-size:1.0em;" id="calendar">
-                </div>
-                <hr>
-                <div class="col text-center mb-3">
-                    <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
-                        재윤, 유진의 결혼식이 <span style="color: #f79e9e;" id="dday-result"></span>
-                      <span id="dday-result-statement"></span>
-                    </h6>
-                </div>
+          </div>
+        </div>
+      </div>
+      <a id="anchor"></a>
+      <div class="ww-section bg-light" id="gallery">
+        <div class="ww-photo-gallery">
+          <div class="container">
+            <h6 class="text-center ww-title"
+              style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;">
+              GALLERY </h6>
+            <h5 class="text-center ww-title"
+              style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 우리의 순간들 </h5>
+            <br>
+            <div class="gallery">
+              <img alt="Gallery Pic 1" class="w-100 gallery-item" src="images/wedding-pictures/001.jpeg" />
+              <img alt="Gallery Pic 35" class="w-100 gallery-item" src="images/wedding-pictures/035.jpeg" />
+              <img alt="Gallery Pic 26" class="w-100 gallery-item" src="images/wedding-pictures/026.jpeg" />
+              <img alt="Gallery Pic 36" class="w-100 gallery-item" src="images/wedding-pictures/036.jpeg" />
+              <img alt="Gallery Pic 37" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/037.jpeg" />
+              <img alt="Gallery Pic 24" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/024.jpeg" />
+              <img alt="Gallery Pic 27" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/027.jpeg" />
+              <img alt="Gallery Pic 4" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/004.jpeg" />
+              <img alt="Gallery Pic 6" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/006.jpeg" />
+              <img alt="Gallery Pic 18" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/018.jpeg" />
+              <img alt="Gallery Pic 2" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/002.jpeg" />
+              <img alt="Gallery Pic 19" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/019.jpeg" />
+              <img alt="Gallery Pic 3" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/003.jpeg" />
+              <img alt="Gallery Pic 20" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/020.jpeg" />
+              <img alt="Gallery Pic 8" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/008.jpeg" />
+              <img alt="Gallery Pic 9" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/009.jpeg" />
+              <img alt="Gallery Pic 28" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/028.jpeg" />
+              <img alt="Gallery Pic 29" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/029.jpeg" />
+              <img alt="Gallery Pic 30" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/030.jpeg" />
+              <img alt="Gallery Pic 10" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/010.jpeg" />
+              <img alt="Gallery Pic 32" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/032.jpeg" />
+              <img alt="Gallery Pic 33" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/033.jpeg" />
+              <img alt="Gallery Pic 34" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/034.jpeg" />
+              <img alt="Gallery Pic 31" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/031.jpeg" />
+              <img alt="Gallery Pic 11" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/011.jpeg" />
+              <img alt="Gallery Pic 13" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/013.jpeg" />
+              <img alt="Gallery Pic 12" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/012.jpeg" />
+              <img alt="Gallery Pic 21" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/021.jpeg" />
+              <img alt="Gallery Pic 16" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/016.jpeg" />
+              <img alt="Gallery Pic 17" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/017.jpeg" />
+              <img alt="Gallery Pic 23" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/023.jpeg" />
+              <img alt="Gallery Pic 15" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/015.jpeg" />
+              <img alt="Gallery Pic 7" class="w-100 gallery-item gallery-hidden"
+                src="images/wedding-pictures/007.jpeg" />
             </div>
-        </div>
-        <div class="ww-section bg-light" id="location">
-            <div class="ww-photo-gallery">
-                <div class="container">
-
-                  <h6 class="text-center ww-title" style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> LOCATION </h6>
-                  <h5 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 오시는 길</h5>
-<!--                    <h2 class="h1 text-center ww-title" style="font-family: 'Great Vibes', cursive; font-size:1.4em">Location</h2>-->
-                    <div class="col text-center mt-5 mb-5">
-                        <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.4em; letter-spacing:-0.5px">
-                            더 베네치아 잠실
-                        </h6>
-                        <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px; line-height: 1.8em;">
-                            서울시 송파구 올림픽로 35다길 42, 루터회관 3층
-                        </h6>
-                      <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px">
-                        * 2시간 무료 주차 가능합니다.
-                      </h6>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="my-3">
-                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.6885607570684!2d127.10040907756948!3d37.51526297205196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca50b6af4ec7b%3A0x4a3a576b6a366d91!2z67Kg64Sk7LmY7JWE7Juo65Sp!5e0!3m2!1sen!2skr!4v1736594222074!5m2!1sen!2skr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.297439052569!2d129.1238775160104!3d35.1741384652207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892c2513ecf5d%3A0x7d362ece2091e2f8!2z7IS87YWA7IKs7J207Ja47Iqk7YyM7YGsIOy7qOuypOyFmO2ZgA!5e0!3m2!1sko!2skr!4v1554092125630!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe> -->
-                            </div>
-
-                            <div class="my-3 text-center">
-                                <a href="https://naver.me/xAFKYrsJ">
-                                    <img alt="naver-map" class="map-icon" id="naver-map"
-                                         src="images/map/naver-map.png"/>
-                                </a>
-                                <a href="https://place.map.kakao.com/12706144">
-                                    <img alt="kakao-map" class="map-icon" id="kakao-map"
-                                         src="images/map/kakao-map.png"/>
-                                </a>
-                                <a href="https://maps.app.goo.gl/PGa5Y1sVUMeXdiKUA">
-                                    <img alt="google-map" class="map-icon" id="google-map"
-                                         src="images/map/google-map.png"/>
-                                </a>
-                            </div>
-
-                            <div>
-                              <div style="display:flex; align-items: center;">
-                                <div class="de-icon circle very-small-size inline" style="background-color:#0d9a48"> <i class="demo-icon de-icon-subway icon-subway"></i> </div>
-                                <h3 class="inline mt-1" style="font-family: 'Noto Serif KR' !important; font-size:1.1em">지하철/버스</h3>
-                              </div>
-                                    <ul>
-                                        <li>
-                                            <h6 style="font-family: 'Noto Serif KR' !important; font-size:0.8em">
-                                            2호선 잠실역 9번출구 삼성생명 옆 건물(루터회관)
-                                            </h6>
-                                        </li>
-                                      <li>
-                                        <h6 style="font-family: 'Noto Serif KR' !important; font-size:0.8em">
-                                          잠실역 정류장 하차
-                                        </h6>
-                                      </li>
-                                    </ul>
-                                </div>
-                            <div>
-                              <div style="display:flex; align-items: center;">
-                                <div class="de-icon circle very-small-size inline" style="background-color:#9400d3"> <i class="demo-icon de-icon-cab icon-cab"></i> </div>
-                                <h3 class="inline mt-1" style="font-family: 'Noto Serif KR' !important; font-size:1.1em">자가용</h3>
-                              </div>
-                                    <ul>
-                                        <li>
-                                            <h6 style="font-family: 'Noto Serif KR' !important; font-size:0.8em">
-                                                서울대 후문 이용
-                                            </h6>
-                                        </li>
-                                        <li>
-                                            <h6 style="font-family: 'Noto Serif KR' !important; font-size:0.8em">
-                                                내비게이션: "더베네치아" 또는 "한국루터회관" 입력
-                                            </h6>
-                                        </li>
-                                    </ul>
-                            </div>
-
-                          <div class="col text-center mt-5 mb-5">
-                            <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px; color:red; line-height: 1.8em;">
-                              * 신부측 대절 버스는 제천 경찰서 앞에서
-                              <br> 식 당일 오전 8시반에 출발합니다.
-                            </h6>
-                          </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="toggle-btn-container">
+              <div id="toggleGallery" class="btn-light"
+                style="border-radius: 10px; padding: 5px; cursor: pointer; font-size: 1.0em; font-family: 'Noto Serif KR', serif; letter-spacing:0.1em;">
+                ▼ 더보기</div>
             </div>
+
+            <!-- 모달 (이미지를 크게 보여주는 영역) -->
+            <div id="imageModal" class="gallery-modal">
+              <span class="close">&times;</span>
+              <img class="gallery-modal-content" id="modalImage">
+            </div>
+
+            <!--                  <div id="myCarousel" class="carousel slide" data-interval="false">-->
+            <!--                    &lt;!&ndash; Indicators &ndash;&gt;-->
+            <!--                    <ol class="carousel-indicators">-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="26" class="active"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="27"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="28"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="29"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="30"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="31"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="32"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="33"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="34"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="6"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="7"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="8"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="9"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="10"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="11"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="12"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="13"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="14"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="15"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="16"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="17"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="18"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="19"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="20"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="21"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="23"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="24"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="35"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="36"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="1"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="2"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="3"></li>-->
+            <!--                      <li data-target="#myCarousel" data-slide-to="4"></li>-->
+
+            <!--                    </ol>-->
+
+            <!--                    &lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+            <!--                    <div class="carousel-inner">-->
+            <!--                      <div class="carousel-item active">-->
+            <!--                        <img alt="Gallery Pic 26" class="w-100" src="images/wedding-pictures/026.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 27" class="w-100" src="images/wedding-pictures/027.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 28" class="w-100" src="images/wedding-pictures/028.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 29" class="w-100" src="images/wedding-pictures/029.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 30" class="w-100" src="images/wedding-pictures/030.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 31" class="w-100" src="images/wedding-pictures/031.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 32" class="w-100" src="images/wedding-pictures/032.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 33" class="w-100" src="images/wedding-pictures/033.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 34" class="w-100" src="images/wedding-pictures/034.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 6" class="w-100" src="images/wedding-pictures/006.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 7" class="w-100" src="images/wedding-pictures/007.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 8" class="w-100" src="images/wedding-pictures/008.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/009.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 10" class="w-100" src="images/wedding-pictures/010.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 11" class="w-100" src="images/wedding-pictures/011.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 12" class="w-100" src="images/wedding-pictures/012.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 13" class="w-100" src="images/wedding-pictures/013.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 14" class="w-100" src="images/wedding-pictures/014.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 15" class="w-100" src="images/wedding-pictures/015.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 16" class="w-100" src="images/wedding-pictures/016.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 17" class="w-100" src="images/wedding-pictures/017.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 18" class="w-100" src="images/wedding-pictures/018.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 19" class="w-100" src="images/wedding-pictures/019.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 20" class="w-100" src="images/wedding-pictures/020.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 21" class="w-100" src="images/wedding-pictures/021.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 23" class="w-100" src="images/wedding-pictures/023.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 24" class="w-100" src="images/wedding-pictures/024.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 35" class="w-100" src="images/wedding-pictures/035.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 36" class="w-100" src="images/wedding-pictures/036.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 1" class="w-100" src="images/wedding-pictures/001.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 2" class="w-100" src="images/wedding-pictures/002.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 3" class="w-100" src="images/wedding-pictures/003.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                      <div class="carousel-item">-->
+            <!--                        <img alt="Gallery Pic 4" class="w-100" src="images/wedding-pictures/004.jpeg"/>-->
+            <!--                      </div>-->
+            <!--                    </div>-->
+
+            <!--                    &lt;!&ndash; Controls &ndash;&gt;-->
+            <!--                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
+            <!--                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+            <!--                      <span class="sr-only">Previous</span>-->
+            <!--                    </a>-->
+            <!--                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
+            <!--                      <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+            <!--                      <span class="sr-only">Next</span>-->
+            <!--                    </a>-->
+            <!--                  </div>-->
+
+          </div>
         </div>
-        <div class="ww-section bg-light" id="account">
-            <div class="ww-photo-gallery">
-                <div class="container">
-                  <h6 class="text-center ww-title" style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> ACCOUNT </h6>
-                  <h5 class="text-center ww-title" style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 마음 전하실 곳</h5>
-            <div class="col text-center mb-5 mt-5">
-                <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.1em; line-height:1.8em;">
-                    소중한 결혼식에 함께해 주시지 못하는 분들을 위해, <br>
-                    아래 계좌번호를 기입하였습니다.<br>
-                    새로운 시작을 응원해 주시는 마음을 감사히 받겠습니다. <br>
+      </div>
+      <div class="ww-section bg-light" id="date">
+        <div class="container ww-wedding-event">
+
+          <h6 class="text-center ww-title"
+            style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;"> SCHEDULE
+          </h6>
+          <h5 class="text-center ww-title"
+            style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 사랑을 약속하는 시간</h5>
+          <div class="pt-5 text-center"
+            style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-0.5px">
+            <span style="font-size: 25px;">2025.03.29 </span> <br>
+            토요일 오후 12:00
+          </div>
+          <hr>
+          <div class="col justify-content-center pt-lg-3"
+            style="display:flex; font-family: 'Roboto Condensed', sans-serif; font-size:1.0em;" id="calendar">
+          </div>
+          <hr>
+          <div class="col text-center mb-3">
+            <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+              재윤, 유진의 결혼식이 <span style="color: #f79e9e;" id="dday-result"></span>
+              <span id="dday-result-statement"></span>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="ww-section bg-light" id="location">
+        <div class="sectionMg layer layer03 ly_waytocome clearfix waytocomeSection">
+          <div class="ww-photo-gallery">
+            <div class="container">
+
+              <h6 class="text-center ww-title"
+                style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;">
+                LOCATION </h6>
+              <h5 class="text-center ww-title"
+                style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 오시는 길</h5>
+              <!--                    <h2 class="h1 text-center ww-title" style="font-family: 'Great Vibes', cursive; font-size:1.4em">Location</h2>-->
+              <div class="col text-center mt-5 mb-5">
+                <h6 style="font-family: 'Noto Serif KR', serif; font-size:1.4em; letter-spacing:-0.5px">
+                  더 베네치아 잠실
                 </h6>
-            </div>
-            <div class="col text-center">
-                <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
-                    <div id="toggle-groom-account-info" style="background-color: #b6b7b9; border-radius: 10px; padding: 5px; cursor: pointer; letter-spacing:0px; " class="acoount-div"> 신랑측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
-                    <div id="groom-account-info" style="display:none;">
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                농협 312-0100-1149-71 <br> 이재윤
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('농협 312-0100-1149-71')">복사</button>
-                            </div>
-                        </div>
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                우리 123412034314 <br> 이두희
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('우리 123412034314')">복사</button>
-                            </div>
-                        </div>
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                우리 123412034314 <br> 백임선
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('우리 123412034314')">복사</button>
-                            </div>
-                        </div>
+                <h6
+                  style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px; line-height: 1.8em;">
+                  서울시 송파구 올림픽로 35다길 42, 루터회관 3층
+                </h6>
+                <h6 style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px">
+                  * 2시간 무료 주차 가능합니다.
+                </h6>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="my-3">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.6885607570684!2d127.10040907756948!3d37.51526297205196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca50b6af4ec7b%3A0x4a3a576b6a366d91!2z67Kg64Sk7LmY7JWE7Juo65Sp!5e0!3m2!1sen!2skr!4v1736594222074!5m2!1sen!2skr"
+                      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.297439052569!2d129.1238775160104!3d35.1741384652207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892c2513ecf5d%3A0x7d362ece2091e2f8!2z7IS87YWA7IKs7J207Ja47Iqk7YyM7YGsIOy7qOuypOyFmO2ZgA!5e0!3m2!1sko!2skr!4v1554092125630!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                  </div>
+                  <div class="addr-wrap anibox">
+                    <div style="padding: 0 33px;">
+                      <a class="ybtn" onclick="openMapImg()">
+                        <span>
+                          약도 이미지 보기</span>
+                      </a>
                     </div>
-                </div>
+                  </div>
+                  <ul class="wayto anibox">
 
-                <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
-                    <div id="toggle-bride-account-info" style="background-color: #b6b7b9; border-radius: 10px; padding: 5px; cursor: pointer; letter-spacing:0px; " class="acoount-div"> 신부측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
-                    <div id="bride-account-info" style="display:none;">
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                우리 123412034314 <br> 홍유진
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('우리 123412034314')">복사</button>
-                            </div>
-                        </div>
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                우리 123412034314 <br> 홍유진
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('우리 123412034314')">복사</button>
-                            </div>
-                        </div>
-                        <div class="bg-light row mt-2 mb-2">
-                            <div class="col-9 text-left">
-                                우리 123412034314 <br> 홍유진
-                            </div>
-                            <div class="col-3 mt-2 text-right">
-                                <button class="btn btn-sm btn-primary" onclick="copyToClipBoard('우리 123412034314')">복사</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                </div>
-            </div>
+                    <li class="li navi">
+                      <span class="n ft-gowun-bold" style="font-weight: bold;">내비게이션</span>
+                      <div>
+                        원하시는 앱을 선택하시면 길안내가 시작됩니다.
+                      </div>
+                      <div class="navi_button_wrap">
+                        <a class="navi_button" onclick="fnCallWeb2App('naverMap')"><span>네이버지도</span></a>
+                        <a class="navi_button" onclick="fnCallWeb2App('tmap')"><span>티맵</span></a>
+                        <a class="navi_button" onclick="fnCallWeb2App('kakaoNavi')"><span>카카오내비</span></a>
+                      </div>
+                    </li>
 
-        </div>
-      <div>
-        <div class="banner01 auto" style="position:relative; display:inline-block; font-family: 'Noto Serif KR', serif; ">
-          <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/005.jpeg"/>
-          <div class="cover" style="overflow: hidden; position:absolute; top:3em; right:0.8em;">
-            <div class="vcenterbox" style="text-align:right; line-height:0.5em; font-size:0.9em;">
-              <br><br>
-              <p style="text-align:right;">장담하건대, 세상이 다 겨울이어도</p><p style="text-align:right;">우리 사랑은 늘 봄처럼 따뜻하고</p><p style="text-align:right;">간혹, 여름처럼 뜨거울 겁니다.</p><p style="text-align:right;">이수동, 사랑가</p><p style="text-align:right;">&nbsp;</p><p style="text-align:right;">&nbsp;</p><p>&nbsp;</p>
-            </div>
+                    <li class="li f16">
+                      <span class="n f18 ft-gowun-bold">지하철</span>
+                      <p style="margin-left:0px;"><span style="color:#3b9f37;">●</span> 2호선, <span
+                          style="color:#e31c79;">●</span>
+                        8호선 잠실역 8,9번 출구</p>
+                      <p style="margin-left:0px;">· 8/9번 출구 앞 삼성생명 옆 건물(한국루터회관)</p>
+                    </li>
+                    <li class="li f16">
+                      <span class="n f18 ft-gowun-bold">버스</span>
+                      <p style="margin-left:0px;"><span style="color:rgb(0,0,0);">잠실역 정류장 하차</span></p>
+                      <p style="margin-left:0px;"><span style="color:#0d347f;">●</span><span style="color:#3b9f37;">
+                        </span>간선 : 302, 303, 320, 341, 342</p>
+                      <p style="margin-left:0px;"><span style="color:#3b9f37;">● </span>지선 :
+                        2412, 2415, 3215, 3216, 3313, 3315, 3318, 3319, 3411, 3412, 3413, 3414, 4318, 4319</p>
+                      <p style="margin-left:0px;"><span style="color:#dd5c32;">●</span><span style="color:#3b9f37;">
+                        </span>광역 : 500-1, 1000, 1001, 1007, 1007-1, 1009, 1100, 1112, 1115, 1115-6, 1115-7, 1117, 1200,
+                        1650, 1670,
+                        1700, 2000, 5600, 5800, 6900, 7007, 8001, 8002, 9005</p>
+                      <p style="margin-left:0px;"><span style="color:#6fb26c;">●</span><span style="color:#3b9f37;">
+                        </span>일반 : 30-1, 30-3, 30-5, 70</p>
+                      <p style="margin-left:0px;"><span style="color:#6ca8ce;">●</span><span style="color:#3b9f37;">
+                        </span>공항 : 6006</p>
+                    </li>
+                    <li class="li f16">
+                      <span class="n f18 ft-gowun-bold">자가용</span>
+                      <p>● 네비게이션 : "더베네치아" 또는 "한국루터회관" 검색</p>
+                      <p>&nbsp; &nbsp;· 주소검색</p>
+                      <p>&nbsp; &nbsp; &nbsp; &nbsp;“서울시 송파구 올림픽로35다길 42” 또는&nbsp;</p>
+                      <p>&nbsp; &nbsp; &nbsp; &nbsp;“서울시 송파구 신천동 7-20” 입력</p>
+                      <p>&nbsp;</p>
+                      <p>● 주차장 안내</p>
+                      <p>&nbsp; &nbsp;· 루터회관 지하주차장 이용 (2시간 무료)</p>
+                      <p>&nbsp; &nbsp;· 주차요원의 안내를 받으세요.</p>
+                    </li>
 
+                  </ul>
+
+                  <div class="my-3 text-center">
+                    <a href="https://naver.me/xAFKYrsJ">
+                      <img alt="naver-map" class="map-icon" id="naver-map" src="images/map/naver-map.png" />
+                    </a>
+                    <a href="https://place.map.kakao.com/12706144">
+                      <img alt="kakao-map" class="map-icon" id="kakao-map" src="images/map/kakao-map.png" />
+                    </a>
+                    <a href="https://maps.app.goo.gl/PGa5Y1sVUMeXdiKUA">
+                      <img alt="google-map" class="map-icon" id="google-map" src="images/map/google-map.png" />
+                    </a>
+                  </div>
+
+                  <div class="col text-center mt-5 mb-5">
+                    <h6
+                      style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.5px; color:red; line-height: 1.8em;">
+                      * 신부측 대절 버스는 제천 경찰서 앞에서
+                      <br> 식 당일 오전 8시반에 출발합니다.
+                    </h6>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="h1 text-center ww-title mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.4em">
-          <hr>
-          <p style="font-size:0.6em; cursor: pointer;" onclick='kakaoShare()'> <i class="fa fa-comment" ></i> 카카오톡으로 공유하기 </p>
-          <p style="font-size:0.6em; cursor: pointer;" onclick='copyToClipBoard("https\://jyj9398.github.io/")'> <i class="fa fa-link" ></i>  청첩장 링크 복사하기 </p>
-          <p class="mt-5"  style="font-family: 'Noto Serif KR', serif; font-size:0.5em"> <i class="fa fa-heart"></i> 이 청첩장은 신랑과 신부가 직접 만든 청첩장입니다 <i class="fa fa-heart"></i></p>
+      </div>
+      <div class="ww-section bg-light" id="account">
+        <div class="ww-photo-gallery">
+          <div class="container">
+            <h6 class="text-center ww-title"
+              style="font-size: 0.6em; font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:3px;">
+              ACCOUNT </h6>
+            <h5 class="text-center ww-title"
+              style="font-family: 'Noto Serif KR', serif; color: #f79e9e; letter-spacing:-0.5px;"> 마음 전하실 곳</h5>
+            <div class="col text-center mb-5 mt-5">
+              <h6
+                style="font-family: 'Noto Serif KR', serif; font-size:0.9em; letter-spacing:-0.1em; line-height:1.8em;">
+                소중한 결혼식에 함께해 주시지 못하는 분들을 위해, <br>
+                아래 계좌번호를 기입하였습니다.<br>
+                새로운 시작을 응원해 주시는 마음을 감사히 받겠습니다. <br>
+              </h6>
+            </div>
+            <div class="col text-center">
+              <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                <div id="toggle-groom-account-info"
+                  style="background-color: #f79e9e; border-radius: 10px; padding: 5px; cursor: pointer; letter-spacing:0px; "
+                  class="acoount-div"> 신랑측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
+                <div id="groom-account-info" style="display:none;">
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      농협 312-0100-1149-71 <br> 이재윤
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('농협 312-0100-1149-71')">복사</button>
+                    </div>
+                  </div>
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      신협 132-069-773558 <br> 이두희
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('신협 132-069-773558')">복사</button>
+                    </div>
+                  </div>
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      우리 123412034314 <br> 백임선
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('우리 123412034314')">복사</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-2" style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                <div id="toggle-bride-account-info"
+                  style="background-color: #f79e9e; border-radius: 10px; padding: 5px; cursor: pointer; letter-spacing:0px; "
+                  class="acoount-div"> 신부측 계좌번호 <span style="float:right;">▾&nbsp;</span></div>
+                <div id="bride-account-info" style="display:none;">
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      우리 123412034314 <br> 홍유진
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('우리 123412034314')">복사</button>
+                    </div>
+                  </div>
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      우리 123412034314 <br> 홍준락
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('우리 123412034314')">복사</button>
+                    </div>
+                  </div>
+                  <div class="bg-light row mt-2 mb-2">
+                    <div class="col-9 text-left">
+                      우리 123412034314 <br> 우필하
+                    </div>
+                    <div class="col-3 mt-2 text-right">
+                      <button class="btn btn-sm btn-primary" style="background-color: #f79e9e; border-color: #f79e9e;"
+                        onclick="copyToClipBoard('우리 123412034314')">복사</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <div class="banner01 auto"
+          style="position:relative; display:inline-block; font-family: 'Noto Serif KR', serif; ">
+          <img alt="Gallery Pic 9" class="w-100" src="images/wedding-pictures/005.jpeg" />
+          <div class="cover" style="overflow: hidden; position:absolute; top:3em; right:0.8em;">
+            <div class="vcenterbox" style="text-align:right; line-height:0.5em; font-size:0.9em;">
+              <br><br>
+              <p style="text-align:right;">장담하건대, 세상이 다 겨울이어도</p>
+              <p style="text-align:right;">우리 사랑은 늘 봄처럼 따뜻하고</p>
+              <p style="text-align:right;">간혹, 여름처럼 뜨거울 겁니다.</p>
+              <p style="text-align:right;">이수동, 사랑가</p>
+              <p style="text-align:right;">&nbsp;</p>
+              <p style="text-align:right;">&nbsp;</p>
+              <p>&nbsp;</p>
+            </div>
+
+          </div>
         </div>
       </div>
-
+      <div class="h1 text-center ww-title mt-5" style="font-family: 'Noto Serif KR', serif; font-size:1.4em">
+        <hr>
+        <p style="font-size:0.6em; cursor: pointer;" onclick='kakaoShare()'> <i class="fa fa-comment"></i> 카카오톡으로 공유하기
+        </p>
+        <p style="font-size:0.6em; cursor: pointer;" onclick='copyToClipBoard("https\://jyj9398.github.io/")'> <i
+            class="fa fa-link"></i> 청첩장 링크 복사하기 </p>
+        <p class="mt-5" style="font-family: 'Noto Serif KR', serif; font-size:0.5em"> <i class="fa fa-heart"></i> 이 청첩장은
+          신랑과 신부가 직접 만든 청첩장입니다 <i class="fa fa-heart"></i></p>
+      </div>
     </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
-     tabindex="-1">
+
+  </div>
+  </div>
+  <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
+    tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">보내는 분 성함</span>
-                    </div>
-                    <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
-                </div>
-                <div class="input-group">
-                    <textarea aria-label="With textarea" class="form-control" id="sender-message"
-                              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
+          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">보내는 분 성함</span>
+            </div>
+            <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
+          </div>
+          <div class="input-group">
+            <textarea aria-label="With textarea" class="form-control" id="sender-message"
+              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
+        </div>
+      </div>
     </div>
-</div>
-<footer></footer>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/ekko-lightbox.min.js"></script>
-<script src="scripts/main.js"></script>
+  </div>
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/parallax.min.js"></script>
+  <script src="js/ekko-lightbox.min.js"></script>
+  <script src="scripts/main.js"></script>
 
-<div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
-</div>
+  <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
+  </div>
 
-<div class="bottom_left">
+  <div class="bottom_left">
     <audio id="player" src="mus.mp3"></audio>
     <div>
-        <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
+      <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
     </div>
-</div>
+  </div>
+  <div class="popImg">
+    <a class="x_button">
+      <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.86018 16.829L16.3455 8.34375" stroke="#cccccc" stroke-width="1" stroke-miterlimit="10"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M16.2431 16.7275L7.75781 8.24219" stroke="#cccccc" stroke-width="1" stroke-miterlimit="10"
+          stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+    <div class="in">
+      <div class="container" id="roughMapContainer">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <img src="images/mapBig.jpg" width="800px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -833,37 +962,47 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    function copyToClipBoard(text, message) {
-        navigator.clipboard.writeText(text);
-        if(message) {
-            alert(message);
-        } else {
-            alert("복사되었습니다");
-        }
+  function copyToClipBoard(text, message) {
+    navigator.clipboard.writeText(text);
+    if (message) {
+      alert(message);
+    } else {
+      alert("복사되었습니다");
     }
-    Kakao.init('0884c106c959c0930a8d4387bb4dc95b');
-    function kakaoShare() {
-        Kakao.Link.sendDefault({
-            objectType: 'feed',
-            content: {
-            title: '이재윤&홍유진의 결혼식에 초대합니다!',
-            imageUrl: 'https://github.com/jyj9398/jyj9398.github.io/blob/main/docs/images/home-img.jpg?raw=true',
-            link: {
-                mobileWebUrl: 'https://jyj9398.github.io',
-                webUrl: 'https://jyj9398.github.io',
-            },
-            },
-            buttons: [
-            {
-                title: '웹으로 보기',
-                link: {
-                    mobileWebUrl: 'https://jyj9398.github.io',
-                    webUrl: 'https://jyj9398.github.io',
-                },
-            },
-            ],
-            installTalk: true,
-        })
-    }
+  }
+  Kakao.init('0884c106c959c0930a8d4387bb4dc95b');
+  function kakaoShare() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '이재윤&홍유진의 결혼식에 초대합니다!',
+        imageUrl: 'https://github.com/jyj9398/jyj9398.github.io/blob/main/docs/images/wedding-pictures/001.jpeg?raw=true',
+        link: {
+          mobileWebUrl: 'https://jyj9398.github.io',
+          webUrl: 'https://jyj9398.github.io',
+        },
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'https://jyj9398.github.io',
+            webUrl: 'https://jyj9398.github.io',
+          },
+        },
+      ],
+      installTalk: true,
+    })
+  }
+
+  $(".popImg .x_button").click(function () {
+    $(".pageCover").removeClass("blur6");
+    $(".popImg").removeClass("visible");
+  });
+  function openMapImg() {
+    $(".pageCover").addClass("blur6");
+    $(".popImg").addClass("visible");
+  }
 </script>
+
 </html>
