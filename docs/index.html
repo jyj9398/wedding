@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>재윤과 유진의 결혼식</title>
   <meta content="재윤과 유진의 결혼식에 와서 축하해주세요~!" name="description" />
-  <meta property="og:image" content="images/weeding-pictures/001.jpeg">
+  <meta property="og:image" content="images/wedding-pictures/001.jpeg">
   <meta property="fb:app_id" content="781066922265598" />
   <meta property="fb:admins" content="Choi.Anderson" />
   <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
@@ -695,9 +695,9 @@
                         원하시는 앱을 선택하시면 길안내가 시작됩니다.
                       </div>
                       <div class="navi_button_wrap">
-                        <a class="navi_button" onclick="fnCallWeb2App('naverMap')"><span>네이버지도</span></a>
+                        <a class="navi_button" onclick="fnCallWeb2App('naverMap')"><span>네이버</span></a>
                         <a class="navi_button" onclick="fnCallWeb2App('tmap')"><span>티맵</span></a>
-                        <a class="navi_button" onclick="fnCallWeb2App('kakaoNavi')"><span>카카오내비</span></a>
+                        <a class="navi_button" onclick="fnCallWeb2App('kakaoNavi')"><span>카카오</span></a>
                       </div>
                     </li>
 
@@ -927,9 +927,9 @@
   </div>
 
   <div class="bottom_left">
-    <audio id="player" src="mus.mp3"></audio>
+    <audio id="player" src="mus.mp3" autoplay="true"></audio>
     <div>
-      <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
+      <i class="fa fa-music fa-2x" onclick="togglePlay()"></i>
     </div>
   </div>
   <div class="popImg">
@@ -962,6 +962,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
+  function togglePlay() {
+    const player = document.getElementById('player')
+    if (player.paused) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }
   function copyToClipBoard(text, message) {
     navigator.clipboard.writeText(text);
     if (message) {
