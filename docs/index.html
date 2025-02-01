@@ -61,6 +61,11 @@
     }
     const marriageDate = new Date(2025, 2, 29);
 
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("player");
+      audio.volume = 0.3;
+    });
+
     $(document).ready(function () {
       document.addEventListener('contextmenu', function (e) {
         e.preventDefault();  // 우클릭 기본 동작을 막음
